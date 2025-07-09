@@ -1,54 +1,60 @@
 
 body {
-  font-family: sans-serif;
+  font-family: 'Georgia', serif;
+  background: url('https://i.ibb.co/MPNxf5p/vintage-map-bg.jpg') repeat center center;
+  background-size: cover;
   margin: 0;
-  background: #f4f4f4;
+  color: #3e2f1c;
 }
 header {
-  background: #111;
-  color: #fff;
+  background: rgba(255, 248, 220, 0.95);
   padding: 1rem;
   text-align: center;
+  border-bottom: 2px solid #8b5e3c;
 }
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
   gap: 1px;
   margin: 20px;
-  background: #ccc;
 }
 .grid-cell {
-  background: white;
-  width: 100%;
-  aspect-ratio: 1/1;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #8b5e3c;
+  aspect-ratio: 1 / 1;
   cursor: pointer;
   transition: background 0.2s;
 }
 .grid-cell.selected {
-  background: #00bcd4;
+  background: #deb887;
+}
+button {
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
 }
 .footer {
   text-align: center;
-  margin: 2rem;
-}
-.total {
-  font-size: 1.2rem;
-  margin: 1rem;
+  padding: 1rem;
+  background: rgba(255, 248, 220, 0.85);
+  font-size: 0.9rem;
 }
 .upload-form {
   display: none;
   text-align: center;
-  padding: 1rem;
-  background: #fff;
+  background: rgba(255, 248, 220, 0.95);
   margin: 20px auto;
   max-width: 400px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  border-radius: 8px;
 }
 .upload-form input, .upload-form textarea {
   width: 90%;
   margin: 0.5rem 0;
   padding: 0.5rem;
-}
-#paypal-button-container {
-  margin-top: 1rem;
+  border: 1px solid #ccc;
 }

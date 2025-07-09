@@ -5,7 +5,7 @@ const uploadForm = document.getElementById('uploadForm');
 const finalTotal = document.getElementById('finalTotal');
 const pricePerCell = 2.5;
 
-for (let i = 0; i < 500 * 1000; i++) {
+for (let i = 0; i < 1000; i++) {
   const cell = document.createElement('div');
   cell.className = 'grid-cell';
   cell.dataset.index = i;
