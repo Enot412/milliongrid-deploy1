@@ -1,0 +1,54 @@
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+header {
+  background: #111;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
+  gap: 1px;
+  margin: 20px;
+  background: #ccc;
+}
+.grid-cell {
+  background: white;
+  width: 100%;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.grid-cell.selected {
+  background: #00bcd4;
+}
+.footer {
+  text-align: center;
+  margin: 2rem;
+}
+.total {
+  font-size: 1.2rem;
+  margin: 1rem;
+}
+.upload-form {
+  display: none;
+  text-align: center;
+  padding: 1rem;
+  background: #fff;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.upload-form input, .upload-form textarea {
+  width: 90%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+#paypal-button-container {
+  margin-top: 1rem;
+}
