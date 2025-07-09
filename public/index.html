@@ -2,10 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MillionGrid</title>
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Welcome to MillionGrid</h1>
-  <p>The interactive ad grid is coming soon...</p>
+  <header>
+    <h1>Buy Your Spot on the Grid</h1>
+    <p>Each square costs $2.50. Click to select your ad space.</p>
+  </header>
+
+  <div class="grid-container" id="grid"></div>
+
+  <div class="footer">
+    <div class="total" id="totalAmount">Selected: 0 cells — Total: $0.00</div>
+    <button onclick="proceedToCheckout()">Continue to Upload & Payment</button>
+    <p>By continuing, you agree to our <a href="/terms.html">Terms of Service</a> and <a href="/dmca.html">DMCA Policy</a>.</p>
+  </div>
+
+  <div class="upload-form" id="uploadForm" style="display:none;">
+    <h2>Upload Your Ad</h2>
+    <input type="text" placeholder="Your website link" id="adLink" required />
+    <input type="file" id="adImage" accept="image/png,image/jpeg,image/webp" required />
+    <textarea placeholder="Short description (optional)" id="adDescription"></textarea>
+    <p>Total: <span id="finalTotal">$0.00</span></p>
+    <div id="paypal-button-container"></div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
