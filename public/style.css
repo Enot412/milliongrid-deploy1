@@ -1,52 +1,54 @@
+
 body {
-  font-family: Georgia, serif;
+  font-family: sans-serif;
   margin: 0;
-  background-image: url('map-background.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  color: #2f1b0c;
+  background: #f4f4f4;
 }
-
 header {
-  background: rgba(255, 248, 220, 0.9);
-  text-align: center;
+  background: #111;
+  color: #fff;
   padding: 1rem;
-  border-bottom: 3px double #654321;
+  text-align: center;
 }
-
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(1000, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
   gap: 1px;
-  margin: 10px;
-  background: #222;
-  overflow: scroll;
-  max-height: 800px;
+  margin: 20px;
+  background: #ccc;
 }
-
 .grid-cell {
-  background: rgba(255,255,255,0.8);
+  background: white;
   width: 100%;
   aspect-ratio: 1/1;
   cursor: pointer;
+  transition: background 0.2s;
 }
-
 .grid-cell.selected {
-  background: #d4af37;
+  background: #00bcd4;
 }
-
+.footer {
+  text-align: center;
+  margin: 2rem;
+}
+.total {
+  font-size: 1.2rem;
+  margin: 1rem;
+}
 .upload-form {
   display: none;
-  background: #fffaf0;
-  padding: 1rem;
-  max-width: 400px;
-  margin: 1rem auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-footer {
   text-align: center;
-  background: rgba(255, 248, 220, 0.9);
   padding: 1rem;
+  background: #fff;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.upload-form input, .upload-form textarea {
+  width: 90%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+#paypal-button-container {
+  margin-top: 1rem;
 }
