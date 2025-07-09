@@ -1,11 +1,12 @@
-
 const grid = document.getElementById('grid');
 const totalDisplay = document.getElementById('totalAmount');
 const uploadForm = document.getElementById('uploadForm');
 const finalTotal = document.getElementById('finalTotal');
 const pricePerCell = 2.5;
+const rows = 500;
+const cols = 1000;
 
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < rows * cols; i++) {
   const cell = document.createElement('div');
   cell.className = 'grid-cell';
   cell.dataset.index = i;
@@ -40,18 +41,36 @@ function proceedToCheckout() {
 function renderPayPalButton(amount, selectedCells) {
   document.getElementById('paypal-button-container').innerHTML = '';
   paypal.Buttons({
-    createOrder: function(data, actions) {
+    createOrder: (data, actions) => {
       return actions.order.create({
         purchase_units: [{
-          amount: {
-            value: amount
-          }
+          amount: { value: amount }
         }]
       });
     },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        alert('Payment completed!');
+    onApprove: (data, actions) => {
+      return actions.order.capture().then(() => {
+        const link = document.getElementById('adLink').value;
+        const imageFile = document.getElementById('adImage').files[0];
+        const description = document.getElementById('adDescription').value;
+        if (imageFile.size > 2 * 1024 * 1024) {
+          alert('Image too large. Max 2MB.');
+          return;
+        }
+        const selectedIndices = Array.from(selectedCells).map(cell => cell.dataset.index);
+        const formData = new FormData();
+        formData.append('link', link);
+        formData.append('description', description);
+        formData.append('image', imageFile);
+        formData.append('cells', JSON.stringify(selectedIndices));
+        formData.append('amount', amount);
+
+        fetch('/submit-ad', {
+          method: 'POST',
+          body: formData
+        })
+        .then(res => res.ok ? alert('Ad submitted!') : alert('Submission failed.'))
+        .catch(() => alert('Submission error.'));
       });
     }
   }).render('#paypal-button-container');
