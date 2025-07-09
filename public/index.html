@@ -2,26 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MillionGrid</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://www.paypal.com/sdk/js?client-id=AW5H9n7pdgqSiqeiX6sxys1dy3QLXKAuXpC14P1iWOOq7tVmf34NP17XeIshGGPuOVfJexjeNUmw8_G-&currency=USD"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=2VFW7F2TW5T5Y&currency=USD"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>MillionGrid</h1>
-    <p>Claim your place on the vintage grid. $2.50 per cell.</p>
-    <button onclick="proceedToCheckout()">Continue to Upload & Payment</button>
-    <div id="totalAmount">Selected: 0 cells — Total: $0.00</div>
+    <h1>Buy Your Spot on the Grid</h1>
+    <p>Each square costs $2.50. Click to select your ad space.</p>
   </header>
 
   <div class="grid-container" id="grid"></div>
 
-  <footer>
-    <p>By continuing, you agree to our <a href="legal.html#terms">Terms of Service</a> and <a href="legal.html#dmca">DMCA Policy</a>.</p>
-  </footer>
+  <div class="footer">
+    <div class="total" id="totalAmount">Selected: 0 cells — Total: $0.00</div>
+    <button onclick="proceedToCheckout()">Continue to Upload & Payment</button>
+    <p>By continuing, you agree to our <a href="/terms.html">Terms of Service</a> and <a href="/dmca.html">DMCA Policy</a>.</p>
+  </div>
 
-  <div class="upload-form" id="uploadForm">
+  <div class="upload-form" id="uploadForm" style="display:none;">
     <h2>Upload Your Ad</h2>
     <input type="text" placeholder="Your website link" id="adLink" required />
     <input type="file" id="adImage" accept="image/png,image/jpeg,image/webp" required />
