@@ -1,53 +1,39 @@
 body {
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
   margin: 0;
-  padding: 0;
-  color: #2f1b0c;
-  background-image: url('map-background.jpg'); /* <-- добавь этот файл в public */
+  background-image: url('map-background.jpg');
   background-size: cover;
-  background-position: center;
   background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-position: center;
+  color: #2f1b0c;
 }
 
 header {
-  background: rgba(255, 248, 220, 0.95);
-  padding: 1.5rem;
+  background: rgba(255, 248, 220, 0.9);
   text-align: center;
+  padding: 1rem;
   border-bottom: 3px double #654321;
-}
-
-h1 {
-  margin: 0;
-  font-size: 2rem;
-  color: #3b2b1a;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(1000, 1fr); /* 1000 columns */
+  grid-template-columns: repeat(1000, 1fr);
   gap: 1px;
-  margin: 0;
+  margin: 10px;
   background: #222;
-  max-height: 80vh;
-  overflow: auto;
+  overflow: scroll;
+  max-height: 800px;
 }
 
 .grid-cell {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255,255,255,0.8);
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1/1;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
 .grid-cell.selected {
   background: #d4af37;
-}
-
-#totalAmount {
-  margin: 1rem 0;
-  font-weight: bold;
 }
 
 .upload-form {
@@ -55,23 +41,12 @@ h1 {
   background: #fffaf0;
   padding: 1rem;
   max-width: 400px;
-  margin: 2rem auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  text-align: center;
-}
-
-.upload-form input,
-.upload-form textarea {
-  display: block;
-  width: 90%;
-  margin: 0.5rem auto;
-  padding: 0.5rem;
-  font-size: 1rem;
+  margin: 1rem auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 footer {
   text-align: center;
   background: rgba(255, 248, 220, 0.9);
   padding: 1rem;
-  border-top: 1px solid #ccc;
 }
